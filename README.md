@@ -16,17 +16,16 @@ var ECM = dbFactory({
 });
 
 // CRUD in a heartbeat! One line per route, that's doing it!
-app.get( '/album',    ECM.dbAction('find'));
-app.post('/album',    ECM.dbAction('save'));
-app.get('/album/:id', ECM.dbAction('findOne'));
-app.del('/album/:id',     ECM.dbAction('deleteOne'));
-app.del('/album',ECM.dbAction('delete'));
+app.get( '/album',      ECM.dbAction('find'));
+app.get('/album/:id',   ECM.dbAction('findOne'))
+app.post('/album',      ECM.dbAction('save'));
+app.get('/album/:id',   ECM.dbAction('findOne'));
+app.del('/album/:id',   ECM.dbAction('deleteOne'));
+app.del('/album',       ECM.dbAction('delete'));
 
 // Want to filter the results?
-app.get('/album',     ECM.dbAction('find',function(result) { 
-  return result.map(function(item) { 
-    item.customDate = new Date(item.customDate); return item; 
-  });  
+app.get('/album',      ECM.dbAction('find',function(result) { 
+  return result.slice(0,5);
 });
 
 // 
