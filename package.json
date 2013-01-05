@@ -1,0 +1,35 @@
+{
+  "name": "express-crud-middlewares",
+  "version": "0.0.1",
+  "description": "CRUD middleware generation for Node Express, enabling a super quick API prototyping with Redis or MongoDB (for now)",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spacenick/express-crud-middlewares.git"
+  },
+  "keywords": [
+    "express",
+    "crud",
+    "api",
+    "mongodb",
+    "redis",
+    "factory",
+    "middleware",
+    "prototyping"
+  ],
+  "author": "Nicolas KERMARC <nicolas.kermarc@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "08d13891c3f21d6386614a87bcf97a698acb536e",
+  "dependencies": {
+    "redis": "~0.8.2",
+    "mongojs": "~0.4.6",
+    "hiredis": "~0.1.14"
+  },
+  "devDependencies": {
+    "express": "~3.0.6"
+  }
+}
