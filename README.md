@@ -8,12 +8,16 @@ CRUD middlewares generations for Node Express, with Redis or MongoDB (for now)
 Basically it looks like this :
 
 ```javascript
-var dbFactory = require('express-crud-middlewares');
+var dbFactory = require('express-crud-middlewares'),
+    express = require('express'),
+    app = express();  
 
 var ECM = dbFactory({
   persistence:'redis', // 'mongodb' also supported (TODO)
   collection:'album' // will be stored under a namespace prefix on redis
 });
+
+app.use(express.bodyParser());
 
 // CRUD in a heartbeat! One line per route, that's doing it!
 app.get( '/album',      ECM.dbAction('find'));
